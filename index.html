@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Importa o framework Phaser-->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+
+    <!--Conecta todas as cenas dentro do HTML-->
+    <script src="Cena1.js"></script>
+    <script src="TelaInicial.js"></script>
+    <title>LILY CONHECE O MUNDO</title>
+
+    <!--Centraliza os elementos na tela-->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style> 
+    <script>
+
+    //configurações do jogo
+    var config = {
+        pixelArt: true,
+        type: Phaser.AUTO,
+        width: 800,
+        height: 600,
+
+        //construção das cenas integradas
+        scene: [TelaInicial, MainScene],
+        physics: {
+            default: 'arcade',
+            arcade: {
+                
+                //define a gravidade
+                gravity: { y: 300 },
+                debug: false
+            }
+        }
+    };
+    
+    //Variável do personagem
+    var lily;
+    
+    //Inicia o jogo
+    var game = new Phaser.Game(config);
+    </script>
+</head>
+</body>
+</html>
